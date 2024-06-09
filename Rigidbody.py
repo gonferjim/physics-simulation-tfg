@@ -349,13 +349,13 @@ class Entity:
 class Spring:
     ropeStiffness = 50000
 
-    def __init__(self, bodyA: Rigidbody, bodyB: Rigidbody, steadyLen: int, stiffness: int = ropeStiffness) -> None:
+    def __init__(self, bodyA: Rigidbody, bodyB: Rigidbody, stiffness: int = ropeStiffness) -> None:
         if not isinstance(bodyA, Rigidbody): raise TypeError("bodyA argument must be a Rigidbody type")
         if not isinstance(bodyB, Rigidbody): raise TypeError("bodyB argument must be a Rigidbody type")
 
         self.bodyA = bodyA
         self.bodyB = bodyB
-        self.steadyLen = steadyLen
+        self.steadyLen = self.bodyA.position.distance_to(bodyB.position)
         self.stiffness = stiffness
     
     def applyTension(self):
