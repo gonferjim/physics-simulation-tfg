@@ -31,7 +31,7 @@ def tuple4toAABB(tupla4: tuple):
 # GAME PROGRESS ===================================================================================
 
 currentLevel = 1
-unlockedLevel = 7
+unlockedLevel = 1
 selectedCircle = True
 speedObject = 5
 
