@@ -54,7 +54,7 @@ class World:
                 cp1, cp2, contactCount = Collisions.findContactPoints(bodyA, bodyB)
                 collManifold = CollisionManifold(bodyA, bodyB, normal, depth, cp1, cp2, contactCount)
 
-                Collisions.resolveCollisionWithRotation(collManifold)
+                Collisions.resolveCollisionWithRotationAndFriction(collManifold)
 
     def __broadPhace(self, deltaTime: float):
         for e in self.entityList:
