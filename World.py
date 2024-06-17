@@ -10,7 +10,7 @@ class World:
         self.springList: list[Spring] = []
         self.contactPairs: list[tuple[int]] = []
         # Because every pixel is like a meter, I will multiply gravity by 20 to make every 20 pixels a meter
-        self.gravity = vec2(0, 9.81 * 10)
+        self.gravity = vec2(0, 9.81 * 20)
         self.completionZone = [0, 0, 0, 0]
         self.playableZone = [0, 0, 0, 0]
         self.usableObjects: list[Entity] = []
@@ -216,7 +216,7 @@ class World:
         self.entityList.append(Entity(pillar2, (0, 0, 0)))
         self.entityList.append(Entity(roof, (180, 0, 0)))
 
-        self.completionZone = [460, 400, 70, 100]
+        self.completionZone = [470, 400, 60, 100]
         self.setPlayableZone(vec2(400, 0), 200, 200)
 
         newBody1 = Rigidbody(vec2(), 5, 0.25, Shape.newCircle(20), False)
@@ -277,7 +277,7 @@ class World:
         self.entityList.append(Entity(ground, (0, 0, 0)))
         self.entityList.append(Entity(ramp, (0, 0, 0)))
 
-        self.completionZone = [0, 400, 700, 150]
+        self.completionZone = [0, 420, 600, 100]
         self.setPlayableZone(vec2(0, 0), 300, 150)
 
         newBody1 = Rigidbody(vec2(), 1, 0.25, Shape.newCircle(20), False)
